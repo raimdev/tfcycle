@@ -1,0 +1,10 @@
+digraph terraform_cycle {
+  rankdir=LR;
+  node [shape=box, style=rounded];
+
+  module_ous_aws_organizations_organizational_unit_level1_dept1_ [label="aws_organizations_organizational_unit.level1[dept1]", fillcolor=lightblue, style=filled];
+  module_ous_aws_organizations_organizational_unit_level1_dept2_ [label="aws_organizations_organizational_unit.level1[dept2]", fillcolor=lightblue, style=filled];
+
+  module_ous_aws_organizations_organizational_unit_level1_dept1_ -> module_ous_aws_organizations_organizational_unit_level1_dept2_;
+  module_ous_aws_organizations_organizational_unit_level1_dept2_ -> module_ous_aws_organizations_organizational_unit_level1_dept1_;
+}
